@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>hello</title>
+    </head>
+    <body>
+        <h1>customer-management!</h1>
+
+        <form th:object="${command}" method="post" action="">
+        
+        <input type="submit" name="action" id="pingtodb" value="Ping to DB" class="btn">
+
+        <input type="submit" name="action" id="pingtocatalog" value="Ping to Catalog-Cart" class="btn">
+
+        
+
+        <br>
+        <p>Functionality API calls:</p>
+        
+
+
+
+
+
+        <div class="message">
+            <span th:text="${message}">
+        </div>  
+
+        </form>
+
+
+    </body>
+</html>

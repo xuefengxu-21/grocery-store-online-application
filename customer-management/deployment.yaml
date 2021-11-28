@@ -1,0 +1,22 @@
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: customer-management-deployment
+    namespace: default
+  spec:
+    selector:
+      matchLabels:
+        name: customer-management
+    replicas: 1 # tells deployment to run 1 pods matching the template
+    template: # create pods using pod definition in this template
+      metadata:
+        # unlike pod.yaml, the name is not included in the meta data as a unique name is
+        # generated from the deployment name
+        labels:
+          name: customer-management
+      spec:
+        containers:
+        - name: customer-management
+          image: xuefeng89/customer-management:v1
+          ports:
+          - containerPort: 8080
